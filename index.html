@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to The Grand Theatre</h1>
+    </header>
+
+    <nav>
+        <button class="tab-button active" data-tab="welcome">Welcome</button>
+        <button class="tab-button" data-tab="order">Order Tickets</button>
+        <button class="tab-button" data-tab="payment">Make Payment</button>
+        <button class="tab-button" data-tab="view-tickets">View Tickets</button>
+    </nav>
+
+    <main>
+        <!-- Welcome Tab -->
+        <section class="tab-content active" id="welcome">
+            <h2>Welcome to the Grand Theatre Booking System</h2>
+            <p>Use this platform to book your tickets, check prices, and manage your movie tickets easily.</p>
+        </section>
+
+        <!-- Order Tab -->
+        <section class="tab-content" id="order">
+            <h2>Order Tickets</h2>
+            <form id="orderForm">
+                <label for="movieName">Movie Name:</label>
+                <input type="text" id="movieName" required>
+                <br>
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" required>
+                <br>
+                <label for="ticketQuantity">Ticket Quantity:</label>
+                <input type="number" id="ticketQuantity" value="1" required>
+                <br>
+                <button type="submit">Submit Order</button>
+            </form>
+            <pre id="orderOutput"></pre>
+        </section>
+
+        <!-- Payment Tab -->
+        <section class="tab-content" id="payment">
+            <h2>Make a Payment</h2>
+            <form id="paymentForm">
+                <label for="paymentToken">Token:</label>
+                <input type="text" id="paymentToken" required>
+                <br>
+                <label for="paymentPrice">Price:</label>
+                <input type="number" id="paymentPrice" required>
+                <br>
+                <button type="submit">Submit Payment</button>
+            </form>
+            <pre id="paymentOutput"></pre>
+        </section>
+
+        <!-- View Tickets Tab -->
+        <section class="tab-content" id="view-tickets">
+            <h2>View All Tickets</h2>
+            <label for="queryUserId">User ID:</label>
+            <input type="text" id="queryUserId" required>
+            <button id="getTickets">Get Tickets</button>
+            <pre id="ticketOutput"></pre>
+        </section>
+    </main>
+</body>
+</html>
